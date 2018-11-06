@@ -270,31 +270,7 @@ def main():
                   "ZI8K_EV7_2018_08_20_1500", "ZI8N_DG8_2018_08_23_1316", "ZIAA_CTU_2018_10_10_1255",
                   "ZIAB_CIU_2018_10_11_1218", "ZIAC_CO0_2018_10_12_1250"]
 
-    """"
-        Calling readTextFile from generate class on each GPS Data file.
-    """
-    for i in range(8):
-        temp_lat1, temp_long1 = generate.readTextFile(file_names[i])
-        temp_lat = temp_lat + temp_lat1
-        temp_long = temp_long + temp_long1
-
-    # Uncomment every line below this to get only the placemark kml file
-    # for i in range(len(temp_long)):
-    #     lat_sorted, long_sorted = zip(*sorted(zip(temp_lat, temp_long),key=operator.itemgetter(0), reverse=True))
-    #
-    #
-    # line = "<?xml version='%s' encoding='%s'?>\n" % ("1.0", "UTF-8")
-    # line = line + "<kml xmlns='%s'>\n" % ("http://www.opengis.net/kml/2.2")
-    # line = line + "<Style id='redpin'>\n<IconStyle>\n\t<Icon>\n\t\t<href>http://maps.google.com/mapfiles/kml/pushpin/red-pushpin.png</href>\n\t</Icon>\n</IconStyle>\n</Style>"
-    # for i in range(len(lat_sorted)-1):
-    #     if  (long_sorted[i]-long_sorted[i+1]) > 0.0000814:
-    #         print("-" + str(long_sorted[i]) + "," + str(lat_sorted[i]))
-    #         line = line + "<Placemark>\n\t <name>Stop</name>\n\t<styleUrl>#redpin</styleUrl>\n\t<description>Stop</description>\n\t"
-    #         line = line + "<Point>\n\t\t<coordinates>-%s,%s</coordinates>\n\t</Point>\n</Placemark>\n" % (str(long_sorted[i]), str(lat_sorted[i]))
-    # line = line + "</Document>\n</kml>"
-    # file = open("Placemark.kml", "w")
-    # file.write(line)
-
+  
 
 if __name__ == '__main__':
     main()
